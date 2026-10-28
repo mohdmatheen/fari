@@ -1,0 +1,47 @@
+:root {
+  --bg-top: #FFF9FC; --bg-mid: #FDEFF5; --bg-bottom: #F4EEFB;
+  --card: #FFFFFF; --lilac: #F2EDFA; --text: #49384F; --muted: #75667B;
+  --accent: #A1426C; --rose: #D87598; --shadow: rgba(180, 79, 124, 0.16);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-top: #2A1E2F; --bg-mid: #221827; --bg-bottom: #1B1420;
+    --card: #2B2131; --lilac: #2F2740; --text: #F6ECF1; --muted: #C9BACD;
+    --accent: #F5B5C8; --rose: #E58AAB; --shadow: rgba(0, 0, 0, 0.4);
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; color: var(--text); line-height: 1.6;
+  font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(180deg, var(--bg-top), var(--bg-mid) 55%, var(--bg-bottom));
+  min-height: 100vh;
+}
+h1, h2, h3, .wordmark { font-family: "Plus Jakarta Sans", system-ui, sans-serif; line-height: 1.2; }
+a { color: var(--accent); }
+a:hover { text-decoration-thickness: 2px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+header.site { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
+header.site img { width: 44px; height: 44px; border-radius: 12px; }
+header.site .wordmark { font-size: 24px; font-weight: 800; text-decoration: none; color: var(--text); }
+header.site nav { margin-left: auto; display: flex; gap: 16px; font-size: 15px; }
+.hero { text-align: center; padding: 24px 0 8px; }
+.hero img { width: 168px; height: 168px; border-radius: 40px; box-shadow: 0 24px 48px var(--shadow); }
+.hero h1 { font-size: clamp(40px, 9vw, 64px); font-weight: 800; margin: 24px 0 4px; letter-spacing: -0.02em; }
+.hero p.tagline { font-size: 20px; color: var(--muted); margin: 0; }
+.card {
+  background: var(--card); border-radius: 28px; padding: 24px;
+  box-shadow: 0 12px 32px var(--shadow); margin-top: 24px;
+}
+.card.lilac { background: var(--lilac); box-shadow: none; }
+.features { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.features li { padding-left: 32px; position: relative; }
+.features li::before {
+  content: "✓"; position: absolute; left: 0; top: 0; width: 22px; height: 22px; border-radius: 11px;
+  background: var(--rose); color: #FFFFFF; font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.legal h2 { font-size: 20px; margin-top: 32px; }
+.legal { font-size: 16px; }
+footer { margin-top: 48px; font-size: 14px; color: var(--muted); text-align: center; }
